@@ -1,0 +1,13 @@
+package com.navals.java.core.collections;
+
+import java.util.HashMap;
+
+public class DemoHashMap {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		HashMap m;
+
+	}
+
+}

@@ -1,0 +1,126 @@
+package com.navals.java.core.collections;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class DemoHashMap {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Map<ClassRoll, Student> mapStuds = new HashMap<>();
+		Student[] studs = new Student[10];
+		studs[0] = createStudent(10, 'A', 12, "Naval Sudhakar",
+				"Krishna Park, New Delhi");
+		studs[1] = createStudent(12, 'A', 18, "Naval Prabhakar",
+				"Vayusenabad, New Delhi");
+		studs[2] = createStudent(10, 'B', 11, "Abhishek",
+				"Tara Aprt, New Delhi");
+		studs[3] = createStudent(8, 'C', 12, "Sunil", "Vayusenabad, New Delhi");
+		studs[4] = createStudent(10, 'A', 12, "Naval Sudhakar",
+				"Vayusenabad, New Delhi");
+		studs[5] = createStudent(11, 'D', 12, "Prabhu Sudhakar",
+				"Vayusenabad, New Delhi");
+		studs[6] = createStudent(null, null, null, "Devraj",
+				"Vayusenabad, New Delhi");
+		studs[7] = createStudent(null, null, null, "Prem Ratan",
+				"Vayusenabad, New Delhi");
+
+		for (int i = 0; i <= 7; i++) {
+			System.out.println(mapStuds.put(studs[i].getClassRoll(), studs[i]));
+		}
+		printMap(mapStuds);
+
+	}
+
+	static Student createStudent(Integer classNumber, Character sectionId,
+			Integer rollNumber, String name, String address) {
+		ClassRoll classRoll = null;
+		if (classNumber != null) {
+			classRoll = new ClassRoll(classNumber, sectionId, rollNumber);
+		}
+		Student s = new Student(classRoll);
+		s.setName(name);
+		s.setAddress(address);
+		return s;
+	}
+
+	static void printMap(Map<ClassRoll, Student> mapStuds) {
+		int i = 0;
+		for (Entry<ClassRoll, Student> aEntry : mapStuds.entrySet()) {
+			System.out.println("Entry " + (i++) + ": "
+					+ aEntry.getValue().toString());
+		}
+	}
+}
+
+class ClassRoll {
+	private Integer classNumber;
+	private Character sectionId;
+	private Integer rollNumber;
+
+	public Integer getClassNumber() {
+		return classNumber;
+	}
+
+	public Character getSectionId() {
+		return sectionId;
+	}
+
+	public Integer getRollNumber() {
+		return rollNumber;
+	}
+
+	ClassRoll(Integer classNumber, Character sectionId, Integer rollNumber) {
+		this.classNumber = classNumber;
+		this.sectionId = sectionId;
+		this.rollNumber = rollNumber;
+	}
+
+	@Override
+	public String toString() {
+		return "" + classNumber + sectionId + "." + rollNumber;
+	}
+}
+
+class Student {
+	private ClassRoll classRoll;
+	private String name;
+	private String address;
+
+	public Student(ClassRoll classRoll) {
+		this.classRoll = classRoll;
+	}
+
+	public ClassRoll getClassRoll() {
+		return classRoll;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	@Override
+	public String toString() {
+		String cRoll = null;
+		if (classRoll == null) {
+			cRoll = "Null";
+		} else {
+			cRoll = classRoll.toString();
+		}
+		return cRoll + "[" + this.name + "," + this.address + "]";
+	}
+
+}

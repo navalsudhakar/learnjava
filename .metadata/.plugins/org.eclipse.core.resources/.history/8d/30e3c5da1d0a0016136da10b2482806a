@@ -1,0 +1,66 @@
+package com.navals.java.core.collections;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class DemoHashMap {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Map<ClassRoll, Student> m = new HashMap<>();
+
+	}
+
+	static Student createStudent(Integer classNumber, Character sectionId, Integer rollNumber, String name, String address) {
+		Student s = new Student(new ClassRoll(classNumber, sectionId, rollNumber));
+		s.setName("Naval Sudhakar");
+		s.setAddress("Vayusenabad, New Delhi");
+	}
+}
+
+class ClassRoll {
+	private Integer classNumber;
+	private Character sectionId;
+	private Integer rollNumber;
+	
+	public Integer getClassNumber() {
+		return classNumber;
+	}
+
+	public Character getSectionId() {
+		return sectionId;
+	}
+
+	public Integer getRollNumber() {
+		return rollNumber;
+	}
+
+	ClassRoll(Integer classNumber, Character sectionId, Integer rollNumber){
+		this.classNumber = classNumber;
+		this.sectionId = sectionId;
+		this.rollNumber = rollNumber;
+	}
+}
+
+class Student {
+	private ClassRoll classRoll;
+	private String name;
+	private String address;
+	
+	public Student(ClassRoll classRoll) {
+		this.classRoll = classRoll;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+}

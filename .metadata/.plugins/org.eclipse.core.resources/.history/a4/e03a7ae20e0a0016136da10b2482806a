@@ -1,0 +1,10 @@
+package com.navals.java.core.collections;
+
+public class DemoHashMap {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

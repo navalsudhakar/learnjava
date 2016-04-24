@@ -1,0 +1,29 @@
+package com.navals.java.core.collections;
+
+import java.util.HashMap;
+
+public class DemoHashMap {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Map<String, > m;
+
+	}
+
+}
+
+class ClassRoll {
+	private Integer classNumber;
+	private String sectionId;
+	private Integer rollNumber;
+	
+	ClassRoll(Integer classNumber, String sectionId, Integer rollNumber){
+		this.classNumber = classNumber;
+		this.sectionId = sectionId;
+		this.rollNumber = rollNumber;
+	}
+}
+
+class Student {
+	
+}
